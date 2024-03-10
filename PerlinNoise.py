@@ -7,7 +7,7 @@ def map_range(value, start1, stop1, start2, stop2):
    return (value - start1) / (stop1 - start1) * (stop2 - start2) + start2
 pygame.init()
 
-screen = pygame.display.set_mode((200,200))
+screen = pygame.display.set_mode((400,400))
 clock = pygame.time.Clock()
 noise = PerlinNoise()
 xoff = 0
@@ -20,10 +20,13 @@ while True:
             pygame.quit()
             exit()
 
-    for y in range(0,200):
+    for y in range(0,400):
         xoff = 0
-        for x in range(0,200):
-            r = map_range(noise([xoff,yoff]),0,1,100,255)
+        for x in range(0,400):
+            r = noise([xoff,yoff]) * 255
+            #r = map_range(noise([xoff,yoff]),0,1,100,255) 
+            #r = random.randint(0,255)
+            if r < 0: r = r * -1
             pygame.draw.circle(screen,(r,r,r,255),(x,y),1)
             xoff += inc
         yoff += inc
