@@ -25,7 +25,7 @@ while True:
         xoff = 0
         for x in range(0,200):
             r = noise([xoff,yoff]) * 255
-            #r = map_range(noise([xoff,yoff]),0,1,100,255) 
+            r = map_range(noise([xoff,yoff]),0,1,100,255) 
             #r = random.randint(0,255)
             if r < 0: r = r * -1
             pygame.draw.circle(display,(r,r,r),(x,y),1)

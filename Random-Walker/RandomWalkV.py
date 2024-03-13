@@ -6,11 +6,14 @@ import random
 class randomwalk :
     def __init__(self,x,y):
         self.pos = pygame.math.Vector2(x,y)
+        self.vel = pygame.math.Vector2(1,-1)
+
 
     def update(self):
-        self.pos.x = self.pos.x + random.choice([-1,1])
-        self.pos.y = self.pos.y + random.choice([-1,1])
-
+        # self.pos.x = self.pos.x + random.choice([-1,1])
+        # self.pos.y = self.pos.y + random.choice([-1,1])
+        self.pos = self.pos + self.vel
+                                                                                            
     def show(self,surface):
         pygame.draw.circle(surface,'white',(self.pos.x,self.pos.y),1)
 
