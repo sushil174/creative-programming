@@ -14,6 +14,7 @@ noise = PerlinNoise()
 xoff = 0
 yoff = 0
 inc = 0.01
+c = 'white'
 while True:
     display.fill('black')
     for event in pygame.event.get():
@@ -24,11 +25,18 @@ while True:
     for y in range(0,200):
         xoff = 0
         for x in range(0,200):
-            r = noise([xoff,yoff]) * 255
-            r = map_range(noise([xoff,yoff]),0,1,100,255) 
+            r = noise([xoff,yoff]) 
+            #r = map_range(noise([xoff,yoff]),0,1,0,255) 
             #r = random.randint(0,255)
-            if r < 0: r = r * -1
-            pygame.draw.circle(display,(r,r,r),(x,y),1)
+            # if r < 0: r = 0
+
+            if r < 0 :
+                c = 'red'
+            else :
+                c = 'blue'
+           
+
+            pygame.draw.circle(display,c,(x,y),1)
             xoff += inc
         yoff += inc
 

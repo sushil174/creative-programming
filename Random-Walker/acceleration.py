@@ -23,19 +23,19 @@ class accel :
         self.vel = random2D() 
         self.vel = self.vel * random.randint(1,5)
         self.acc = pygame.math.Vector2()
-        self.max = 5
+        self.max = 8
 
     def update(self):
         mouse = pygame.math.Vector2(pygame.mouse.get_pos())
         self.acc = mouse - self.pos
-        self.acc = pygame.math.Vector2.normalize(self.acc) * 1
+        self.acc = pygame.math.Vector2.normalize(self.acc)
         self.vel = self.vel + self.acc
-        
+
         
         if magSq(self.vel) > self.max*self.max:
             self.vel = pygame.math.Vector2.normalize(self.vel) * self.max
         
-        self.pos = self.pos + self.vel
+        self.pos = self.pos + self.vel 
 
     
     def show(self,surface):

@@ -19,8 +19,21 @@ class accel :
 
         angle = random2D() 
         r = random.randrange(0,100)
-        angle = angle * random.randrange(25,100) if r < 178 else pygame.math.Vector2.normalize(angle) * 2
+        angle = angle * random.randrange(25,100) if r < 1 else pygame.math.Vector2.normalize(angle) * 3
         self.pos = self.pos + angle
+        l = random.randrange(10,25)
+        if self.pos.x < 0 :
+            self.pos = self.pos + pygame.math.Vector2((angle.x+l,angle.y))
+
+        if self.pos.x > 200 :
+            self.pos = self.pos + pygame.math.Vector2((angle.x-l,angle.y))
+
+        if  self.pos.y < 0 :
+            self.pos = self.pos + pygame.math.Vector2((angle.x,angle.y+l))
+
+        if self.pos.y > 200 :
+            self.pos = self.pos + pygame.math.Vector2((angle.x,angle.y-l))
+            
 
     def show(self,surface) :
         c = (random.randrange(0,255),random.randrange(0,255),random.randrange(0,255))
