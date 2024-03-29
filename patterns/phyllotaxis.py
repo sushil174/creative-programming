@@ -17,7 +17,7 @@ while True :
         if event.type ==pygame.QUIT :
             pygame.quit()
             exit()
-    a = n * math.degrees(angle2)
+    a = n * math.degrees(angle)
     r = c * math.sqrt(n)
     x = r * math.cos(a) + 1080/2
     y = r * math.sin(a) + 720/2
