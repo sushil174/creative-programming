@@ -4,6 +4,8 @@ from sys import exit
 import random
 pygame.init()
 
+
+
 screen = pygame.display.set_mode((1080,720))
 clock = pygame.time.Clock()
 angle = 137.3

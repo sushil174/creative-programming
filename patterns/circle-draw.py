@@ -16,6 +16,7 @@ class circles:
         self.width = 2
         self.v = 0.1
         self.b = 3
+        
     def update(self) :
         self.radius += self.b
         
