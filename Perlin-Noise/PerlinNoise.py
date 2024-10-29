@@ -1,7 +1,7 @@
 import pygame
 from sys import exit
 import random
-from perlin_noise import PerlinNoise
+# from perlin_noise import PerlinNoise
 
 def map_range(value, start1, stop1, start2, stop2):
    return (value - start1) / (stop1 - start1) * (stop2 - start2) + start2

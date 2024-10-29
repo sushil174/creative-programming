@@ -2,6 +2,7 @@ import pygame
 import math
 from sys import exit
 import random
+
 pygame.init()
 
 screen = pygame.display.set_mode((1080,720))
